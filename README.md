@@ -1,6 +1,11 @@
 # Review
 
-> 个人技术成长与面试准备的综合知识库，涵盖技术实验项目、面试话术准备、AI 应用实践等内容。
+<p align="center">
+  <img src="./assets/icon-review.svg" alt="Review Icon" width="120" />
+</p>
+
+<p align="center">个人技术成长与面试准备的综合知识库</p>
+<p align="center">💼 面试话术 &nbsp;|&nbsp; 🔧 技术实验 &nbsp;|&nbsp; 🤖 AI 应用</p>
 
 ---
 
