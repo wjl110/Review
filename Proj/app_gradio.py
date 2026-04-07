@@ -3,9 +3,10 @@
 使用 Gradio 构建的本地 Web UI，调用阿里云百炼通义千问 API。
 """
 import os
+
+import gradio as gr
 from dotenv import load_dotenv
 from openai import OpenAI
-import gradio as gr
 
 load_dotenv()
 

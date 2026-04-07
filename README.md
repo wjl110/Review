@@ -123,13 +123,13 @@ ls rhetoric/
 
 ### 🔧 Proj/ - 技术实验项目
 
-基于阿里云 DashScope SDK 接入通义千问大模型，包含两种使用方式：
+基于 OpenAI 兼容模式调用阿里云百炼通义千问大模型（`openai` Python SDK + DashScope compatible-mode），包含两种使用方式：
 
 | 文件 | 说明 |
 |------|------|
-| `Aliyun.py` | 命令行多轮对话示例，支持流式输出 |
-| `app_gradio.py` | 基于 Gradio 的 Web UI，提供可视化交互界面 |
-| `requirements.txt` | 项目依赖：`dashscope`、`gradio`、`python-dotenv` |
+| `Aliyun.py` | 命令行单轮对话示例，快速验证 API 连通性 |
+| `app_gradio.py` | 基于 Gradio 的 Web UI，提供多轮可视化交互界面 |
+| `requirements.txt` | 项目依赖：`openai`、`gradio`、`python-dotenv` |
 | `.env.example` | 环境变量模板，需配置 `DASHSCOPE_API_KEY` |
 | `Cursor-Agent-性价比配置.md` | Cursor AI 编辑器的 Agent 性价比配置方案 |
 | `云服务实操说明.md` | 阿里云等云服务的实操配置说明 |
@@ -192,7 +192,7 @@ ls rhetoric/
 | 技术/工具 | 用途 |
 |-----------|------|
 | **Python** | 主要编程语言（Proj 模块） |
-| **DashScope SDK** | 阿里云通义千问 API 调用 |
+| **openai SDK** | 通过 DashScope compatible-mode 调用阿里云通义千问 API |
 | **Gradio** | Web UI 框架，构建可视化对话界面 |
 | **python-dotenv** | 环境变量管理 |
 | **YAML** | OpenClaw AI Agent 技能配置文件格式 |
