@@ -1,0 +1,1 @@
+缺少 .gitignore 文件，需要添加标准 Python .gitignore 配置，防止提交 .env、__pycache__、.pyc 等不必要的文件
