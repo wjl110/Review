@@ -1,0 +1,1 @@
+Add a standard Python .gitignore configuration to prevent committing unnecessary files like .env, __pycache__, .pyc, etc.
