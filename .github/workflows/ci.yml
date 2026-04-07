@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "Proj/**"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    paths:
+      - "Proj/**"
+      - ".github/workflows/ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-test:
+    name: Lint & Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11", "3.12"]
+
+    defaults:
+      run:
+        working-directory: Proj
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: Proj/pyproject.toml
+
+      - name: Install dependencies
+        run: pip install ".[dev]"
+
+      - name: Lint with ruff
+        run: python -m ruff check .
+
+      - name: Run tests
+        env:
+          DASHSCOPE_API_KEY: test-key-placeholder
+        run: python -m pytest tests/ -v
